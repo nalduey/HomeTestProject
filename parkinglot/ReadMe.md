@@ -8,11 +8,14 @@ Java 17 Version and Postgres Dockerized.
 
 1. Install Java 17 (JDK)
 2. Install Docker and Start Docker
-3. By command line go to docker\postgres folder 
-4. Execute docker-compose up -d
-5. Confirm that Postgress DB is Running on Docker
-6. By command line go to parkinglot\build\libs 
-7. Execute java -jar parkinglot-0.0.1-SNAPSHOT.jar
+3. Instal gradle 
+4. By command line go to docker\postgres folder 
+5. Execute docker-compose up -d
+6. Confirm that Postgress DB is Running on Docker
+7. By command line go to parkinglot folder 
+8. execute gradle build
+9. go to parkinglot\build\libs 
+10. Execute java -jar parkinglot-0.0.1-SNAPSHOT.jar
 
 
 <h2> Data Preloaded </h2>
