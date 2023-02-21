@@ -1,0 +1,3 @@
+[engine:junit-jupiter]/[class:com.sealed.parkinglot.ParkingLotApplicationTests]/[method:contextLoads()]
+[engine:junit-jupiter]/[class:com.sealed.parkinglot.controller.ParkingLotControllerTest]/[method:callGetSpotAvailableCount()]
+[engine:junit-jupiter]/[class:com.sealed.parkinglot.controller.ParkingLotControllerTest]/[method:callIsParkingLotFull()]

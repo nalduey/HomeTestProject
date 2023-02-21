@@ -1,0 +1,63 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '2.6.4'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'org.graalvm.buildtools.native' version '0.9.18'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.sealed'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '17'
+
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('testcontainersVersion', "1.16.2")
+	set('log4j2.version', '2.16.0')
+}
+
+dependencies {
+	implementation 'junit:junit:4.13.1'
+	annotationProcessor 'org.projectlombok:lombok'
+	annotationProcessor "org.mapstruct:mapstruct-processor:1.4.2.Final"
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'javax.persistence:javax.persistence-api:2.2'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.flywaydb:flyway-core'
+	runtimeOnly 'org.postgresql:postgresql'
+	testImplementation 'io.beanmother:beanmother-core:0.9.0'
+	testImplementation 'io.beanmother:beanmother-java8-converter:0.9.0'
+	testImplementation 'commons-io:commons-io:2.11.0'
+	implementation 'org.modelmapper:modelmapper:3.1.0'
+	implementation 'com.vladmihalcea:hibernate-types-52:2.16.2'
+	implementation 'com.jayway.jsonpath:json-path:2.7.0'
+	implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.9'
+	implementation 'com.sun.jersey:jersey-bundle:1.19.4'
+	implementation 'org.yaml:snakeyaml:1.33'
+	implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+	implementation 'io.micrometer:micrometer-registry-prometheus'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+
+
